@@ -3,6 +3,7 @@
 
 ### Website link 
 https://hackjnu-admin.vercel.app/
+
 The Shovel and Dumper Management Portal is a React-based web application tailored for administrative purposes in construction or mining operations. It serves as a central hub for administrators to communicate announcements to all shovel and dumper operators efficiently. Additionally, it offers a platform for operators to raise issues or complaints they encounter in the field. This portal plays a crucial role in maintaining transparency and efficiency in operational management.
 ## Key Features
 1. Announcements Dashboard: Admins can post announcements that are instantly visible to all shovel and dumper operators. This feature ensures that critical information, such as safety notices or operational changes, is communicated effectively.
