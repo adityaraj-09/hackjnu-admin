@@ -5,14 +5,14 @@ import Box from '@mui/material/Box';
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
 import { Button, Card, CardContent, CardHeader, Dialog, DialogContent, Typography} from "@mui/material";
-
+const baseurl="https://hackjnu.onrender.com"
 function Vehicle(){
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
     const navigate = useNavigate();
     useEffect(() => {
         const getData = async () => {
-            await fetch("http://localhost:3001/vehicles",{
+            await fetch(baseurl+"/vehicles",{
                 headers:{
                     Authorization: `Bearer ${Cookies.get('autho')}`
                 }

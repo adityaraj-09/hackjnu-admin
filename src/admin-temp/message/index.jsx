@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-
+const baseurl="https://hackjnu.onrender.com"
 export default function Message() {
     const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
@@ -13,7 +13,7 @@ export default function Message() {
     const [message, setMessage] = useState({sender:"Please Select a Message",message:""});
     useEffect(() => {
         const getData = async () => {
-            await fetch("http://localhost:3001/messages",{
+            await fetch(baseurl+"/messages",{
                 headers:{
                     Authorization: `Bearer ${Cookies.get('autho')}`
                 }

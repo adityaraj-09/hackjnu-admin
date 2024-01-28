@@ -4,14 +4,14 @@ import Alert from '@mui/material/Alert';
 import "./announcement.css";
 import { useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
-
+const baseurl="https://hackjnu.onrender.com"
 export default function Announcement() {
     const textareaRef = useRef();
     const [open, setOpen] = useState(false);
     const navigate = useNavigate();
 
     const handleSend = async () => {
-        const response = await fetch('http://localhost:3001/announce', {
+        const response = await fetch(baseurl+'/announce', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json',
             Authorization: `Bearer ${Cookies.get('autho')}` 
