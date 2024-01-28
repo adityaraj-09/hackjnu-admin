@@ -125,7 +125,7 @@ function GoogleChart() {
   }
 export default function Dashboard(){
     const navigate=useNavigate();
-    const [data, setData] = useState({});
+    const [data, setData] = useState([]);
     const [announcement, setAnnouncement] = useState([]);
     useEffect(() => {
         const getData = async () => {
@@ -149,7 +149,7 @@ export default function Dashboard(){
             }).catch(err => {
                 console.log(err);
             })
-            await fetch("http://localhost:3001/frontend/annoucements",{
+            await fetch(baseurl+"/accnmt",{
               headers:{
                 Authorization: `Bearer ${Cookies.get('autho')}`
               }
@@ -165,9 +165,8 @@ export default function Dashboard(){
                 }
             }
             ).then(data => {
-                if(data.length >5)
-                    data = data.slice(0,5);
-                setAnnouncement(data.annoucements);
+               
+                setAnnouncement(data);
             }).catch(err => {
                 console.log(err);
             })
@@ -216,7 +215,7 @@ export default function Dashboard(){
                         announcement.map((item) => {
                             return (
                                 <tr>
-                                    <td>{new Date(item.createdAt).toLocaleString()}: {item.content}</td>
+                                    <td>{new Date(item.timeStamp).toLocaleString()}: {item.message}</td>
                                 </tr>
                             )
                         })
